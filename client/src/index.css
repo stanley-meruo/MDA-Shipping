@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
+@import "tailwindcss";
+
+@theme {
+    --breakpoint-xs: 29.25rem;
+    --breakpoint-xsm: 35rem;
+    --breakpoint-xmd: 54.75rem;
+    --breakpoint-xxl: 93.75rem;
+
+    --color-babyblue: #3579fa;
+    --color-darkblue: #18162D;
+    --color-inputblue: #5591FF;
+
+    --font-inter: "Inter", sans-serif;
+    --font-mulish: "Mulish", sans-serif;
+}
