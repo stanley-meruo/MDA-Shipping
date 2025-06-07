@@ -27,6 +27,9 @@
 
 ### Built with
 
+- NodeJS/ExpressJS - Backend proxy for creating Backend API
+- [MongoDB](https://www.mongodb.com/) - Database 
 - [Tailwind CSS](https://tailwindcss.com) - CSS Framework
 - Framer Motion -  React Animation Library
 - [React](https://reactjs.org/) - JS Frontend Framework
+- Vite - Frontend buildups
