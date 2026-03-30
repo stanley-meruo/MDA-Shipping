@@ -72,7 +72,7 @@ const Newsletter = () => {
                 type="submit"
                 disabled={loading}
                 className={`${
-                  loading ? "opacity-60 cursor-not-allowed" : "hover:scale-90"
+                  loading ? "opacity-60 cursor-not-allowed" : "hover:scale-95"
                 } bg-white py-3 w-full text-gray-700 rounded-lg font-semibold font-inter cursor-pointer transition-transform duration-300 lg:py-4`}
               />
             </div>

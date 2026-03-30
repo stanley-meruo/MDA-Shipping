@@ -9,7 +9,7 @@ export default defineConfig({
     host: "0.0.0.0",
     port: 3000,
     // proxy: {
-    //   "/api": "http://localhost:5000", // Production backend URL
+    //   "/api": "http://localhost:3000", // Production backend URL
     // },
   },
 });

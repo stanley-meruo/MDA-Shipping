@@ -182,13 +182,11 @@ const Navbar = () => {
 
             {/* Services Dropdown */}
             <li className="relative">
-              <button
-                onClick={() => setMobileSubmenuOpen(!mobileSubmenuOpen)}
-                className="flex items-center justify-between w-full"
-              >
+              <button className="flex items-center gap-20 w-full">
                 <li>
                   <Link
                     to="/services"
+                    onClick={() => setMenuOpen(false)}
                     className={`pb-1 border-b-2 ${
                       isActive("/services")
                         ? "border-babyblue text-babyblue font-semibold"
@@ -200,6 +198,7 @@ const Navbar = () => {
                 </li>
 
                 <IoIosArrowDown
+                  onClick={() => setMobileSubmenuOpen(!mobileSubmenuOpen)}
                   className={`text-xl transition-transform duration-300 ${
                     mobileSubmenuOpen ? "rotate-180 text-babyblue" : ""
                   }`}

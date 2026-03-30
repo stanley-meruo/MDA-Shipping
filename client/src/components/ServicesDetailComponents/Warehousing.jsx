@@ -4,6 +4,7 @@ import axios from "axios";
 import Button from "../Button";
 import { ImSpinner3 } from "react-icons/im";
 import DetailsButton from "../DetailsButton";
+import SkeletonLoader from "../SkeletonLoader";
 
 const Warehousing = () => {
   const [vehicles, setVehicles] = useState([]);
@@ -35,9 +36,9 @@ const Warehousing = () => {
 
   if (loading) {
     return (
-      <div className="flex justify-center p-20">
-        <ImSpinner3 className="animate-spin text-blue-500 text-4xl" />
-      </div>
+      <section className="pt-24 md:pt-26 lg:pt-32 xl:pt-36">
+        <SkeletonLoader />
+      </section>
     );
   }
 
@@ -63,7 +64,7 @@ const Warehousing = () => {
             <Button
               onClick={() => navigate("/contact")}
               title="CONTACT US TO LEARN MORE"
-              className="bg-babyblue py-4 w-full text-sm text-white rounded-lg font-semibold font-inter hover:text-gray-700 hover:bg-gray-100 hover:scale-90 duration-300 transition-transform cursor-pointer sm:w-2/4 md:w-4/5 lg:w-4/6 lg:py-5 lg:mt-4"
+              className="bg-babyblue py-4 w-full text-sm text-white rounded-lg font-semibold font-inter hover:text-gray-700 hover:bg-gray-100 hover:scale-95 duration-300 transition-transform cursor-pointer sm:w-2/4 md:w-4/5 lg:w-4/6 lg:py-5 lg:mt-4"
             />
           </div>
           <div className="w-full">

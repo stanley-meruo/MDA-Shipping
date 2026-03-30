@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { ImSpinner3 } from "react-icons/im";
 import Button from "../Button";
 import { useNavigate } from "react-router-dom";
 import {motion} from "motion/react"
@@ -34,10 +33,39 @@ const HomeServices = () => {
   }, []);
 
   if (loading) {
-      return (
-        <div className="flex justify-center p-20">
-          <ImSpinner3 className="animate-spin text-babyblue text-4xl" />
-        </div>
+    return (
+      <section className="grid px-5 xs:px-6 sm:px-10 md:px-12 xmd:px-14 lg:px-16 xl:px-22 xxl:px-28">
+        <h1 className="text-lg text-babyblue tracking-wide font-semibold font-inter">
+          SERVICES WE DO
+        </h1>
+
+        <motion.div
+          key="content"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5 }}
+          className="grid gap-4 py-5 xsm:grid-cols-2 lg:grid-cols-4 lg:gap-3 lg:py-7 xl:gap-5"
+        >
+          {Array.from({ length: 9 }).map((_, index) => {
+             const isWide = (index + 1) % 3 === 0; // choose pattern for wide placeholders
+
+            return (
+              <div
+                key={index}
+                className={`${isWide ? "xsm:col-span-2 md:col-span-2 lg:col-span-2" : ""}`}
+              >
+                <div className="relative rounded-xl border-[0.3px] border-gray-200 bg-gray-100 shadow-md overflow-hidden animate-pulse">
+                  {/* Title */}
+                  <div className="absolute left-8 top-10 w-32 h-5 bg-gray-300 rounded-md"></div>
+
+                  {/* Image */}
+                  <div className="w-full h-44 xsm:h-48 md:h-52 lg:w-58"></div>
+                </div>
+              </div>
+            );
+          })}
+        </motion.div>
+      </section>
     );
   }
   if (error) {
@@ -61,14 +89,13 @@ const HomeServices = () => {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{
           duration: 1.5,
-          delay: 0.5,
           ease: [0, 0.71, 0.2, 1.01],
         }}
       >
         {vehicles.map((vehicle, index) => (
           <div
             key={index}
-            className={`relative rounded-xl border-[0.3px] border-gray-100 shadow-md hover:bg-gray-100 hover:scale-90 duration-300 transition-transform ${
+            className={`relative rounded-xl border-[0.3px] border-gray-100 shadow-md hover:bg-gray-100 hover:scale-95 duration-300 transition-transform ${
               vehicle.mainImage.image[1] ? "xmd:col-span-2 xsm:col-span-2" : ""
             }`}
           >
@@ -93,12 +120,13 @@ const HomeServices = () => {
           </div>
         ))}
       </motion.div>
-
+      
+      {/* Button */}
       <div className="mx-auto w-full mb-4 py-4 xs:w-2/4 xmd:py-8 xmd:w-2/6 xl:w-1/4">
         <Button
           onClick={() => navigate("/services")}
           title="MORE ABOUT SERVICES"
-          className="bg-babyblue py-4 w-full text-sm text-white rounded-lg font-semibold font-inter hover:text-gray-700 hover:bg-gray-100 hover:scale-90 duration-300 transition-transform cursor-pointer lg:py-5"
+          className="bg-babyblue py-4 w-full text-sm text-white rounded-lg font-semibold font-inter hover:text-gray-700 hover:bg-gray-100 hover:scale-95 duration-300 transition-transform cursor-pointer lg:py-5"
         />
       </div>
     </section>

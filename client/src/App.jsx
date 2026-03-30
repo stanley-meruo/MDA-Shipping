@@ -19,6 +19,7 @@ import { ImSpinner3 } from "react-icons/im";
 import Logoheader from "/logo-header.svg";
 import PageToTop from "./components/PageToTop";
 import ScrollToTopButton from "./components/ScrollToTopButton";
+import Error from "./pages/Error";
 
 
 export default function App() {
@@ -33,7 +34,7 @@ export default function App() {
     return (
       <div className="flex justify-center gap-4 items-center h-screen ">
         <img src={Logoheader} className="w-48" />
-        <ImSpinner3 className="w-10 h-10 text-babyblue animate-spin" />
+        <ImSpinner3 className="size-16 text-babyblue animate-spin" />
       </div>
     );
   }
@@ -41,7 +42,7 @@ export default function App() {
   return (
     <>
       <Navbar />
-      <PageToTop/>
+      <PageToTop />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/services" element={<Services />} />
@@ -56,10 +57,14 @@ export default function App() {
           element={<VehicleSeven />}
         />
         <Route path="/services/dismantling" element={<VehicleEight />} />
-        <Route path="/services/part-purchase-assistance" element={<VehicleNine />} />
+        <Route
+          path="/services/part-purchase-assistance"
+          element={<VehicleNine />}
+        />
         <Route path="/contact" element={<Contact />} />
+        <Route path="*" element={<Error />} />
       </Routes>
-      <ScrollToTopButton/>
+      <ScrollToTopButton />
       <Newsletter />
       <Footer />
     </>
